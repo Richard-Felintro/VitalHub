@@ -10,3 +10,14 @@ export const Container = styled.SafeAreaView`
 
   background-color: ${(props) => `#${props.bgColor}`};
 `;
+
+export const ContainerRow = styled.View`
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between
+`;
+
+export const FieldContent = styled.View`
+  margin-bottom: 15px;
+  width: 90%;
+`;

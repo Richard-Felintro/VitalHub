@@ -1,13 +1,13 @@
-import { Container } from "../../components/Container/Style";
+import { Container, ContainerRow } from "../../components/Container/Style";
 import { Logo } from "../../components/Logo/Style";
 import { Title } from "../../components/Title/Style";
-import { Input } from "../../components/Input/Style";
+import { InputSquare } from "../../components/Input/Style";
 import { Button, ButtonGoogle } from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
-import { Link } from "../../components/Link/Style";
+import { Link, LinkSubtitle } from "../../components/Link/Style";
 import { TextAccount } from "../../components/TextAccount/Style";
 import { AntDesign } from "@expo/vector-icons";
-import { Subtitle } from "../../components/Subtitle/Style";
+import { Subtitle, SubtitleHighlighted } from "../../components/Subtitle/Style";
 export const EmailVerificationScreen = () => {
   return (
     <Container>
@@ -15,14 +15,22 @@ export const EmailVerificationScreen = () => {
 
       <Title>Verifique seu e-mail</Title>
       <Subtitle>
-        Digite o código de 4 dígitos enviado para
+        Digite o código de 4 dígitos enviado para{" "}
+        <SubtitleHighlighted color={"#496BBA"}>username@email.com</SubtitleHighlighted>
       </Subtitle>
 
-      <Input placeholder="Usuário ou E-mail" />
+      <ContainerRow>
+        <InputSquare placeholder="0" />
+        <InputSquare placeholder="0" />
+        <InputSquare placeholder="0" />
+        <InputSquare placeholder="0" />
+      </ContainerRow>
 
       <Button>
-        <ButtonTitle color={"white"}>Continuar</ButtonTitle>
+        <ButtonTitle color={"white"}>Entrar</ButtonTitle>
       </Button>
+
+      <Link color={"#344F8F"}>Reenviar Código</Link>
     </Container>
   );
 };

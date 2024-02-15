@@ -17,7 +17,19 @@ export const Navigation = ({ navigation }) => {
       />
       <Button
         title="email verification"
-        onPress={() => navigation.navigate("EmailVerification")}
+        onPress={() => navigation.navigate("EmailVerificationScreen")}
+      />
+      <Button
+        title="new password"
+        onPress={() => navigation.navigate("NewPasswordScreen")}
+      />
+      <Button
+        title="create account"
+        onPress={() => navigation.navigate("CreateAccountScreen")}
+      />
+      <Button
+        title="profile"
+        onPress={() => navigation.navigate("ProfileScreen")}
       />
     </View>
   );

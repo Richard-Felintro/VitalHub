@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-export const Subtitle = styled.Text`
+export const Subtitle = styled.Text.attrs({
+  placeholderTextColor: "#5F5C6B",
+})`
   font-size: 16px;
   font-family: "Quicksand_500Medium";
-  color: #5F5C6B;
+  color: ${(props) => `#${props.color}`};
   margin-bottom: 15px;
   text-align: center;
-  width: 90%;
+  width: 75%;
+`;
+
+export const SubtitleHighlighted = styled(Subtitle)`
+  font-family: MontserratAlternates_600SemiBold;
+  color: ${(props) => `#${props.color}`};
 `;

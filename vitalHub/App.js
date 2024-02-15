@@ -6,6 +6,9 @@ import { Navigation } from "./src/screens/Navigation/Navigation";
 import { LoginScreen } from "./src/screens/LoginScreen/LoginScreen";
 import { ForgotPasswordScreen } from "./src/screens/ForgotPasswordScreen/ForgotPasswordScreen";
 import { EmailVerificationScreen } from "./src/screens/EmailVerificationScreen/EmailVerificationScreen";
+import { NewPasswordScreen } from "./src/screens/NewPasswordScreen/NewPasswordScreen";
+import { CreateAccountScreen } from "./src/screens/CreateAccountScreen/CreateAccountScreen";
+import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
 
 import {
   useFonts,
@@ -48,23 +51,38 @@ export default function App() {
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
-          options={{ title: "LoginScreen" }}
+          options={{ title: "LoginScreen", headerShown: false }}
         />
 
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
-          options={{ title: "SplashScreen" }}
+          options={{ title: "SplashScreen", headerShown: false }}
         />
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPasswordScreen}
-          options={{ title: "ForgotPassword" }}
+          options={{ title: "ForgotPassword", headerShown: false }}
         />
         <Stack.Screen
-          name="EmailVerification"
+          name="EmailVerificationScreen"
           component={EmailVerificationScreen}
-          options={{ title: "EmailVerification" }}
+          options={{ title: "EmailVerification", headerShown: false }}
+        />
+        <Stack.Screen
+          name="NewPasswordScreen"
+          component={NewPasswordScreen}
+          options={{ title: "NewPassword", headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateAccountScreen"
+          component={CreateAccountScreen}
+          options={{ title: "CreateAccount", headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{ title: "Profile", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />

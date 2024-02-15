@@ -27,7 +27,7 @@ export const LoginScreen = () => {
       </ButtonGoogle>
 
       <TextAccount color={"#4D659D"}>
-        {"Não tem conta? "} <Link>Crie uma conta agora!</Link>
+        {"Não tem conta? "} <Link color={"#4D659D"}>Crie uma conta agora!</Link>
       </TextAccount>
     </Container>
   );
