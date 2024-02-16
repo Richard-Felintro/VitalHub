@@ -13,7 +13,7 @@ export const CreateAccountScreen = () => {
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
 
       <Title>Criar conta</Title>
-      <Subtitle>
+      <Subtitle color={"4E4B59"}>
         Insira seu endereço de e-mail e senha para realizar seu cadastro.
       </Subtitle>
 

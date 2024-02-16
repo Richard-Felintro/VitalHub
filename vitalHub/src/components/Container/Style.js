@@ -14,10 +14,14 @@ export const Container = styled.SafeAreaView`
 export const ContainerRow = styled.View`
   width: 90%;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
 `;
 
-export const FieldContent = styled.View`
+export const FieldContent = styled.SafeAreaView`
   margin-bottom: 15px;
   width: 90%;
+`;
+
+export const FieldContentSmall = styled(FieldContent)`
+  width: 40%;
 `;

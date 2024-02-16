@@ -6,7 +6,6 @@ export const Subtitle = styled.Text.attrs({
   font-size: 16px;
   font-family: "Quicksand_500Medium";
   color: ${(props) => `#${props.color}`};
-  margin-bottom: 15px;
   text-align: center;
   width: 75%;
 `;

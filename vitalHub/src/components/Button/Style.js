@@ -15,6 +15,11 @@ export const Button = styled.TouchableOpacity`
   padding: 10px 8px 10px 8px;
 `;
 
+export const ButtonSmall = styled(Button)`
+  width: 25%;
+  height: 40px;
+`;
+
 export const ButtonGoogle = styled(Button)`
   flex-direction: row;
   background-color: #fafafa;

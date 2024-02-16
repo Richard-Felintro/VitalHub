@@ -12,7 +12,7 @@ export const ForgotPasswordScreen = () => {
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
 
       <Title>Recuperar senha</Title>
-      <Subtitle>
+      <Subtitle color={"5F5C6B"}>
         Digite abaixo seu email cadastrado que enviaremos um link para
         recuperação de senha
       </Subtitle>

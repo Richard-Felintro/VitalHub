@@ -12,7 +12,7 @@ export const NewPasswordScreen = () => {
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
 
       <Title>Redefinir senha</Title>
-      <Subtitle>
+      <Subtitle color={"4E4B59"}>
         Insira e confirme a sua nova senha
       </Subtitle>
 

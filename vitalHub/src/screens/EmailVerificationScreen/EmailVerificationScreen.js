@@ -14,7 +14,7 @@ export const EmailVerificationScreen = () => {
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
 
       <Title>Verifique seu e-mail</Title>
-      <Subtitle>
+      <Subtitle color={"4E4B59"}>
         Digite o código de 4 dígitos enviado para{" "}
         <SubtitleHighlighted color={"#496BBA"}>username@email.com</SubtitleHighlighted>
       </Subtitle>

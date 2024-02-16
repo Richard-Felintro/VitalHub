@@ -1,4 +1,9 @@
-import { Container, FieldContent } from "../../components/Container/Style";
+import {
+  Container,
+  ContainerRow,
+  FieldContent,
+  FieldContentSmall
+} from "../../components/Container/Style";
 import { Image } from "react-native";
 import { Logo } from "../../components/Logo/Style";
 import { Title } from "../../components/Title/Style";
@@ -17,14 +22,30 @@ export const ProfileScreen = () => {
       <ProfileImg source={require("../../assets/ProfileImgPlaceholder.png")} />
       <Container color={"#FBFBFB"}>
         <Title>Richard Kosta</Title>
-        <Subtitle>richard.kosta@gmail.com</Subtitle>
+        <Subtitle color={"4E4B59"}>richard.kosta@gmail.com</Subtitle>
 
         <FieldContent>
-          <InputLabel>PHOLD</InputLabel>
-          <InputLight placeholder={"PHOLD"} maxLength={2}/>
+          <InputLabel>Data de nascimento</InputLabel>
+          <InputLight placeholder={"DD/MM/YYYY"} maxLength={10}>04/05/1999</InputLight>
         </FieldContent>
-
-        
+        <FieldContent>
+          <InputLabel>CPF</InputLabel>
+          <InputLight placeholder={"*********-**"} maxLength={13}>859********</InputLight>
+        </FieldContent>
+        <FieldContent>
+          <InputLabel>Endereço</InputLabel>
+          <InputLight>Rua Vicenso Silva, 987</InputLight>
+        </FieldContent>
+        <ContainerRow>
+          <FieldContentSmall>
+            <InputLabel>CEP</InputLabel>
+            <InputLight placeholder={"*****-***"} maxLength={11}>06548-909</InputLight>
+          </FieldContentSmall>
+          <FieldContentSmall>
+            <InputLabel>Cidade</InputLabel>
+            <InputLight placeholder={"*****-***"}>Moema-SP</InputLight>
+          </FieldContentSmall>
+        </ContainerRow>
       </Container>
     </>
   );

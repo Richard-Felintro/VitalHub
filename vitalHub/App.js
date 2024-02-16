@@ -9,6 +9,7 @@ import { EmailVerificationScreen } from "./src/screens/EmailVerificationScreen/E
 import { NewPasswordScreen } from "./src/screens/NewPasswordScreen/NewPasswordScreen";
 import { CreateAccountScreen } from "./src/screens/CreateAccountScreen/CreateAccountScreen";
 import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
+import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeScreen";
 
 import {
   useFonts,
@@ -83,6 +84,11 @@ export default function App() {
           name="ProfileScreen"
           component={ProfileScreen}
           options={{ title: "Profile", headerShown: false }}
+        />
+        <Stack.Screen
+          name="PatientHomeScreen"
+          component={PatientHomeScreen}
+          options={{ title: "PatientHome", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />
