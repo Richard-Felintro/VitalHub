@@ -25,3 +25,19 @@ export const FieldContent = styled.SafeAreaView`
 export const FieldContentSmall = styled(FieldContent)`
   width: 40%;
 `;
+
+export const InfoContainer = styled.View`
+  padding: 0px;
+  justify-content: center;
+  padding: 5px;
+
+  width: 30%;
+  height: 30%;
+  margin-left: 10px;
+  margin-top: 50px;
+`;
+
+export const DoctorContainer = styled.View`
+  flex: 1;
+  width: 100%;
+`;

@@ -1,8 +1,11 @@
-import StyleSheet from "react-native";
+import { StyleSheet } from "react-native";
 
+// import lib moment
 import moment from "moment";
+import { StyledCalendarStrip } from "./Style";
 
 export const CalendarHome = () => {
+  //define padrão pt-br para calendário
   moment.updateLocale("pt-br", {
     //meses
     months:
@@ -73,6 +76,7 @@ export const CalendarHome = () => {
     />
   );
 };
+
 const styles = StyleSheet.create({
   iconsStyle: {
     display: "none",

@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import { LinearGradient } from "expo-linear-gradient";
 
-export const PatientHeader = styled.View`
+export const HeaderHome = styled(LinearGradient).attrs({
+  colors: ['#60BFC5', '#496BBA'],
+  start: {x: -0.03, y: 1.5},
+  end: {x: 1, y:0}
+ })`
   width: 100%;
   height: 144px;
   background-color: #60bfc5;

@@ -9,7 +9,7 @@ import { EmailVerificationScreen } from "./src/screens/EmailVerificationScreen/E
 import { NewPasswordScreen } from "./src/screens/NewPasswordScreen/NewPasswordScreen";
 import { CreateAccountScreen } from "./src/screens/CreateAccountScreen/CreateAccountScreen";
 import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
-import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeScreen";
+import { DoctorHomeScreen } from "./src/screens/DoctorHomeScreen/DoctorHomeScreen";
 
 import {
   useFonts,
@@ -17,7 +17,11 @@ import {
   MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
 } from "@expo-google-fonts/montserrat-alternates";
-import { Quicksand_500Medium } from "@expo-google-fonts/quicksand";
+import {
+  Quicksand_400Regular,
+  Quicksand_500Medium,
+  Quicksand_600SemiBold,
+} from "@expo-google-fonts/quicksand";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,7 +30,9 @@ export default function App() {
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
     MontserratAlternates_700Bold,
+    Quicksand_400Regular,
     Quicksand_500Medium,
+    Quicksand_600SemiBold,
   });
 
   if (!fontsLoaded && !fontError) {
@@ -86,9 +92,9 @@ export default function App() {
           options={{ title: "Profile", headerShown: false }}
         />
         <Stack.Screen
-          name="PatientHomeScreen"
-          component={PatientHomeScreen}
-          options={{ title: "PatientHome", headerShown: false }}
+          name="DoctorHomeScreen"
+          component={DoctorHomeScreen}
+          options={{ title: "DoctorHome", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />
