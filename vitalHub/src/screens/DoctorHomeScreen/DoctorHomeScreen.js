@@ -20,6 +20,9 @@ import { ContainerButton } from "./Style";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
 import { useState } from "react";
 import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCard";
+import { ListComponent } from "../../components/List/Style";
+import { CancellationModal } from "../../components/CancellationModal/CancelationModal";
+import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
 
 const Consultas = [
   { id: 1, nome: "Richard", situacao: "pendente" },
@@ -30,6 +33,8 @@ const Consultas = [
 export const DoctorHomeScreen = () => {
   const [statusLista, setStatusLista] = useState("pendente");
 
+  const [showModalCancel, setShowModalCancel] = useState(false);
+  const [showModalAppointment, setShowModalAppointment] = useState(false);
   return (
     <Container>
       <HeaderHome>
@@ -64,34 +69,32 @@ export const DoctorHomeScreen = () => {
             onPress={() => setStatusLista("cancelado")}
           />
         </ContainerButton>
-
-        {/* <SelectButton>
-                <ButtonTitle style={{ textTransform: null, fontSize: 12 }}>Agendados</ButtonTitle>
-            </SelectButton> 
-
-            <WhiteSelectButton>
-           <ButtonTitle style={{ textTransform: null, fontSize: 12, color: '#607EC5' }}>Realizadas</ButtonTitle>
-           </WhiteSelectButton>
-
-           <WhiteSelectButton>
-           <ButtonTitle style={{ textTransform: null, fontSize: 12, color: '#607EC5' }}>Canceladas</ButtonTitle>
-           </WhiteSelectButton>    */}
-
-        {/* <CardPaciente
-          imagePatient={"https://github.com/Gustavoozz.png"}
-          patientName={"Gustavo"}
-          patientAge={"18 anos"}
-          appointmentType={"Endócrino"}
-          appointmentHour={"17:00"}
-        /> */}
-        <FlatList
+        <ListComponent
           data={Consultas}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) =>
-            statusLista == item.situacao && <AppointmentCard situacao={item.situacao}/>
+            statusLista == item.situacao && (
+              <AppointmentCard
+                situacao={item.situacao}
+                onPressCancel={() => setShowModalCancel(true)}
+                onPressAppointment={() => setShowModalAppointment(true)}
+                showsVerticalScrollIndicator={false}
+              />
+            )
           }
-        ></FlatList>
+        />
       </DoctorContainer>
+
+      {/* Modal de cancelamento */}
+      <CancellationModal
+        visible={showModalCancel}
+        setShowModalCancel={setShowModalCancel}
+      />
+
+      <AppointmentModal
+        visible={showModalAppointment}
+        setShowModalAppointment={setShowModalAppointment}
+      />
     </Container>
   );
 };

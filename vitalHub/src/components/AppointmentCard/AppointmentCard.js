@@ -14,7 +14,6 @@ import {
   ButtonText,
 } from "./Style";
 
-
 export const AppointmentCard = ({
   situacao = "pendente",
   onPressCancel,
@@ -22,7 +21,9 @@ export const AppointmentCard = ({
 }) => {
   return (
     <ContainerCardsList>
-      <ProfileImage />
+      <ProfileImage
+        source={require("../../assets/ProfileImgPlaceholder.png")}
+      />
       <ContentCard>
         <DataProfileCard>
           <ProfileName>Gustavo Magalhães</ProfileName>
@@ -33,23 +34,25 @@ export const AppointmentCard = ({
 
           <ViewRow>
             <ClockCard>
-              <AntDesign
-                name="clockcircle"
-                size={14}
-                color={situacao == "pendente" ? "#49B3BA" : "#8C8A97"}
-              />
+              <ClockBox>
+                <AntDesign
+                  name="clockcircle"
+                  size={14}
+                  color={situacao == "pendente" ? "#49B3BA" : "#8C8A97"}
+                />
+                <TextBold>14:00</TextBold>
+              </ClockBox>
               {situacao == "cancelado" ? (
                 <></>
               ) : situacao == "pendente" ? (
-                <ButtonCard>
+                <ButtonCard onPress={onPressCancel}>
                   <ButtonText>Cancelar</ButtonText>
                 </ButtonCard>
               ) : (
-                <ButtonCard>
+                <ButtonCard onPress={onPressAppointment}>
                   <ButtonText>Ver prontuário</ButtonText>
                 </ButtonCard>
               )}
-              <TextBold>14:00</TextBold>
             </ClockCard>
           </ViewRow>
         </DataProfileCard>

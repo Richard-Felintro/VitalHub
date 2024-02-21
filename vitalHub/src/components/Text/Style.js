@@ -7,5 +7,6 @@ export const MontSerratWhite = styled.Text`
 `;
 export const UserText = styled.Text`
   font-family: "Quicksand_500Medium";
+  font-size: 14px;
   color: #4e4b59;
 `;

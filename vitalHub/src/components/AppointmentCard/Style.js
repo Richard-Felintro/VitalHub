@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { Title } from "../Title/Style";
 
+export const ClockBox = styled.View`
+  height: 26px;
+  width: 100px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F0F5;
+`;
+
 export const ContainerCardsList = styled.View`
   width: 90%;
   margin: 0 auto;
@@ -23,7 +32,7 @@ export const ProfileImage = styled.Image`
 export const ContentCard = styled.View`
   width: 70%;
   gap: 11px;
-  background-color: #FFF;
+  background-color: #fff;
 `;
 
 export const DataProfileCard = styled.View`
@@ -70,11 +79,13 @@ export const ClockCard = styled.View`
     props.situacao == "pendente" ? "#E8fcfd" : "f1f0f5"};
 `;
 
-export const ButtonCard = styled.TouchableOpacity``;
+export const ButtonCard = styled.TouchableOpacity`
+  background-color: transparent;
+  border: none;
+`;
 
 export const ButtonText = styled.Text`
   font-size: 12px;
-  font-family: MontserratAlternates_500Regular;
-  color: ${(props) =>
-    props.situacao == "pendente" ? "#c81d25" : "#344f8f"};
+  font-family: MontserratAlternates_500Medium;
+  color: ${(props) => (props.situacao == "pendente" ? "#c81d25" : "#344f8f")};
 `;
