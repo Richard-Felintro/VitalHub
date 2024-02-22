@@ -6,7 +6,7 @@ export const Title = styled.Text`
   color: #33303e;
   margin-bottom: 5px;
   text-align: center;
-  width: 90%;
+  width: 100%;
 `;
 
 export const TitleUser = styled(Title)`

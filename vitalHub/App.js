@@ -10,6 +10,8 @@ import { NewPasswordScreen } from "./src/screens/NewPasswordScreen/NewPasswordSc
 import { CreateAccountScreen } from "./src/screens/CreateAccountScreen/CreateAccountScreen";
 import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
 import { DoctorHomeScreen } from "./src/screens/DoctorHomeScreen/DoctorHomeScreen";
+import { MedicalRecordScreen } from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
+import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeScreen";
 
 import {
   useFonts,
@@ -95,6 +97,16 @@ export default function App() {
           name="DoctorHomeScreen"
           component={DoctorHomeScreen}
           options={{ title: "DoctorHome", headerShown: false }}
+        />
+        <Stack.Screen
+          name="PatientHomeScreen"
+          component={PatientHomeScreen}
+          options={{ title: "PatientHome", headerShown: false }}
+        />
+        <Stack.Screen
+          name="MedicalRecordScreen"
+          component={MedicalRecordScreen}
+          options={{ title: "MedicalRecord", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />

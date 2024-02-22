@@ -25,12 +25,33 @@ export const InputSquare = styled(Input)`
 `;
 
 export const InputLight = styled(Input)`
-  background-color: #EEEEEE;
-  border: 0;
+  background-color: #ddd;
   margin-top: 5px;
 
+  color: ${(props) => `${props.color}`};
   font-size: 14px;
-  color: #33303E;
+  color: #33303e;
   font-family: MontserratAlternates_500Medium;
   text-align: left;
+`;
+
+export const InputLightEditable = styled(Input)`
+  width: 100%;
+  height: ${(props) => props.size}px;
+  background-color: "#eee";
+  margin-top: 5px;
+
+  border-color: ${(props) => (props.empty == true ? "#49b3ba" : "#0000")};
+
+  color: #4e4b59;
+  font-size: 14px;
+  color: #33303e;
+  font-family: MontserratAlternates_500Medium;
+  text-align: left;
+  text-align-vertical: top;
+
+  ::placeholder {
+    color: #34898f;
+    font-family: MontserratAlternates_600SemiBold;
+  }
 `;

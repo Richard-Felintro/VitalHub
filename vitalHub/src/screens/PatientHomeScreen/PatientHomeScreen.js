@@ -14,27 +14,26 @@ import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListA
 import { useState } from "react";
 import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCard";
 import { ListComponent } from "../../components/List/Style";
-import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
-import { CancellationModal } from "../../components/CancellationModal/CancellationModal";
+import { PatientAppointmentModal } from "../../components/PatientAppointmentModal/PatientAppointmentModal";
 
 const Consultas = [
   { id: 1, nome: "Richard", situacao: "pendente" },
   { id: 2, nome: "Richard", situacao: "realizado" },
   { id: 3, nome: "Richard", situacao: "cancelado" },
-  { id: 4, nome: "Richard", situacao: "cancelado" },
 ];
 
-export const DoctorHomeScreen = () => {
+export const PatientHomeScreen = () => {
   const [statusLista, setStatusLista] = useState("pendente");
+
   const [showModalCancel, setShowModalCancel] = useState(false);
-  const [showModalAppointment, setShowModalAppointment] = useState(false);
+  const [showModalAppointment, setShowModalAppointment] = useState(true);
   return (
     <Container>
       <HeaderHome>
-        <UserDoctor source={require("../../assets/DoctorImage.png")} />
+        <UserDoctor source={require("../../assets/ProfileImgPlaceholder.png")} />
         <InfoContainer>
           <UserText>Bem-vindo</UserText>
-          <MontSerratWhite>Dr. Claudio </MontSerratWhite>
+          <MontSerratWhite>Richard Kosta</MontSerratWhite>
         </InfoContainer>
 
         <NotificationBell source={require("../../assets/Notification.png")} />
@@ -80,11 +79,7 @@ export const DoctorHomeScreen = () => {
 
       {/* Modal de cancelamento */}
 
-      <CancellationModal
-        visible={showModalCancel}
-        setShowModalCancel={setShowModalCancel}
-      />
-      <AppointmentModal
+      <PatientAppointmentModal
         visible={showModalAppointment}
         setShowModalAppointment={setShowModalAppointment}
       />

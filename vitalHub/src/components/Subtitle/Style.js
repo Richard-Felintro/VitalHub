@@ -10,6 +10,10 @@ export const Subtitle = styled.Text.attrs({
   width: 75%;
 `;
 
+export const SubtitleDual = styled(Subtitle)`
+  width: fit-content;
+`;
+
 export const SubtitleHighlighted = styled(Subtitle)`
   font-family: MontserratAlternates_600SemiBold;
   color: ${(props) => `#${props.color}`};

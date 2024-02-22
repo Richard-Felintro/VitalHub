@@ -12,9 +12,9 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const ContainerRow = styled.View`
-  width: 90%;
+  width: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const FieldContent = styled.SafeAreaView`

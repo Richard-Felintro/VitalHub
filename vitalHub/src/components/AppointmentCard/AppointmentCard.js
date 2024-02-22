@@ -1,4 +1,5 @@
 import { AntDesign } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import {
   ContainerCardsList,
   ProfileImage,
@@ -12,6 +13,8 @@ import {
   ClockCard,
   ButtonCard,
   ButtonText,
+  ClockBox,
+  ButtonTextRed,
 } from "./Style";
 
 export const AppointmentCard = ({
@@ -29,24 +32,25 @@ export const AppointmentCard = ({
           <ProfileName>Gustavo Magalhães</ProfileName>
           <ProfileData>
             <TextAge>19 anos</TextAge>
+            <Entypo name="dot-single" size={3} color="#D9D9D9" />
             <TextBold>Rotina</TextBold>
           </ProfileData>
 
           <ViewRow>
-            <ClockCard>
-              <ClockBox>
+            <ClockCard >
+              <ClockBox situacao={situacao}>
                 <AntDesign
                   name="clockcircle"
                   size={14}
                   color={situacao == "pendente" ? "#49B3BA" : "#8C8A97"}
                 />
-                <TextBold>14:00</TextBold>
+                <TextBold situacao={situacao}>14:00</TextBold>
               </ClockBox>
               {situacao == "cancelado" ? (
                 <></>
               ) : situacao == "pendente" ? (
                 <ButtonCard onPress={onPressCancel}>
-                  <ButtonText>Cancelar</ButtonText>
+                  <ButtonTextRed>Cancelar</ButtonTextRed>
                 </ButtonCard>
               ) : (
                 <ButtonCard onPress={onPressAppointment}>

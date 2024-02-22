@@ -7,7 +7,9 @@ export const ClockBox = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #F1F0F5;
+  background-color: ${(props) =>
+    props.situacao == "pendente" ? "#E8fcfd" : "f1f0f5"};
+  border-radius: 5px;
 `;
 
 export const ContainerCardsList = styled.View`
@@ -41,11 +43,11 @@ export const DataProfileCard = styled.View`
 
 export const ProfileName = styled(Title)`
   font-size: 16px;
+  text-align: left;
 `;
 
 export const ProfileData = styled.View`
   flex-direction: row;
-  gap: 15px;
 `;
 
 export const TextAge = styled.Text`
@@ -56,6 +58,7 @@ export const TextAge = styled.Text`
 export const TextBold = styled.Text`
   font-family: Quicksand_600SemiBold;
   color: ${(props) => (props.situacao == "pendente" ? "#49B3BA" : "#8C8A97")};
+  margin: 0 0 5px 5px;
 `;
 
 export const ViewRow = styled.View`
@@ -67,21 +70,16 @@ export const ViewRow = styled.View`
 
 export const ClockCard = styled.View`
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-
-  gap: 6px;
-  padding: 4px 23px;
-
-  border-radius: 5px;
-  border: 1px;
-
-  background-color: ${(props) =>
-    props.situacao == "pendente" ? "#E8fcfd" : "f1f0f5"};
+  width: 100%;
+  gap: 10px;
 `;
 
 export const ButtonCard = styled.TouchableOpacity`
   background-color: transparent;
   border: none;
+  
 `;
 
 export const ButtonText = styled.Text`
@@ -89,3 +87,7 @@ export const ButtonText = styled.Text`
   font-family: MontserratAlternates_500Medium;
   color: ${(props) => (props.situacao == "pendente" ? "#c81d25" : "#344f8f")};
 `;
+
+export const ButtonTextRed = styled(ButtonText)`
+color: #C81D25;
+`
