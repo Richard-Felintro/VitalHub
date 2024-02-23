@@ -8,8 +8,12 @@ export const Title = styled.Text`
   text-align: center;
   width: 100%;
 `;
+export const ScreenTitle = styled(Title)`
+  margin-top: 50px;
+  margin-bottom: 25px;
+`;
 
 export const TitleUser = styled(Title)`
-    font-size: 16px;
-    margin-bottom: 10px;
-`
+  font-size: 16px;
+  margin-bottom: 10px;
+`;

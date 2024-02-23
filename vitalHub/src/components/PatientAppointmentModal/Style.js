@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { InputLightEditable } from "../Input/Style";
 
 export const PatientImage = styled.Image`
   width: 90%;
@@ -10,12 +11,12 @@ export const PatientModal = styled.View`
   flex: 1;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  justify-content: flex-end
+  justify-content: flex-end;
 `;
 
 export const ModalContent = styled.View`
   width: 100%;
-  height: 80%;
+  height: 70%;
   border-radius: 10px 10px 0 0;
 
   padding: 30px 30px 10px;
@@ -38,4 +39,16 @@ export const ModalText = styled.Text`
 export const RowContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const ButtonSmall = styled(InputLightEditable)`
+  width: 25%;
+  height: 53px;
+
+  border-color: ${(props) => (props.empty == true ? "#49b3ba" : "#0000")};
+
+  ::placeholder {
+    color: #34898f;
+    font-family: MontserratAlternates_600SemiBold;
+  }
 `;

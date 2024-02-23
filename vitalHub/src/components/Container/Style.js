@@ -8,7 +8,7 @@ export const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: center;
 
-  background-color: ${(props) => `#${props.bgColor}`};
+  background-color: #FBFBFB;
 `;
 
 export const ContainerRow = styled.View`

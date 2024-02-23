@@ -4,6 +4,7 @@ import {
   PatientModal,
   PatientImage,
   RowContainer,
+  ButtonSmall,
 } from "./Style";
 import { Title } from "../Title/Style";
 import { UserText } from "../Text/Style";
@@ -11,12 +12,19 @@ import { ButtonTitle } from "../ButtonTitle/Style";
 import { Button, ButtonSecondary } from "../Button/Style";
 import { Link } from "../Link/Style";
 import { InputBox } from "../Input/InputBox";
+import { InputLabel } from "../Label/Style";
+import { ContainerRow, FieldContent } from "../Container/Style";
+import { InputLight } from "../Input/Style";
+import { BtnListAppointment } from "../BtnListAppointment/BtnListAppointment";
+import { useState } from "react";
+import { BtnAppointmentType } from "../BtnAppointmentType/BtnAppointmentType";
 
 export const PatientAppointmentModal = ({
   visible,
   setShowModalAppointment,
   ...rest
 }) => {
+  const [appointmentType, setAppointmentType] = useState("rotina");
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <PatientModal>
@@ -27,6 +35,28 @@ export const PatientAppointmentModal = ({
             placeholder={"Tipo de consulta"}
             height={53}
           />
+
+          <FieldContent>
+            <InputLabel>Qual o nível da consulta</InputLabel>
+            <ContainerRow>
+              <BtnAppointmentType
+                textButton={"Rotina"}
+                clickButton={appointmentType === "rotina"}
+                onPress={() => setAppointmentType("rotina")}
+              />
+              <BtnAppointmentType
+                textButton={"Exame"}
+                clickButton={appointmentType === "exame"}
+                onPress={() => setAppointmentType("exame")}
+              />
+              <BtnAppointmentType
+                textButton={"Urgência"}
+                clickButton={appointmentType === "urgencia"}
+                onPress={() => setAppointmentType("urgencia")}
+              />
+            </ContainerRow>
+          </FieldContent>
+
           <InputBox
             labelText={"Informe a localização desejada"}
             placeholder={"Informe a localização"}

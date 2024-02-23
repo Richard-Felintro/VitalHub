@@ -12,6 +12,9 @@ import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
 import { DoctorHomeScreen } from "./src/screens/DoctorHomeScreen/DoctorHomeScreen";
 import { MedicalRecordScreen } from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
 import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeScreen";
+import { SelectClinicScreen } from "./src/screens/SelectClinicScreen/SelectClinicScreen";
+import { SelectDoctorScreen } from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
+import { SelectDateScreen } from "./src/screens/SelectDateScreen/SelectDateScreen";
 
 import {
   useFonts,
@@ -50,6 +53,7 @@ export default function App() {
     //option(title) - titulo da tela
 
     <NavigationContainer>
+      <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator>
         <Stack.Screen
           name="Navigation"
@@ -107,6 +111,21 @@ export default function App() {
           name="MedicalRecordScreen"
           component={MedicalRecordScreen}
           options={{ title: "MedicalRecord", headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectClinicScreen"
+          component={SelectClinicScreen}
+          options={{ title: "SelectClinic", headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectDoctorScreen"
+          component={SelectDoctorScreen}
+          options={{ title: "SelectDoctor", headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectDateScreen"
+          component={SelectDateScreen}
+          options={{ title: "SelectDate", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />

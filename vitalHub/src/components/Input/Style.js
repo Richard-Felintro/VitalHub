@@ -46,7 +46,7 @@ export const InputLightEditable = styled(Input)`
   color: #4e4b59;
   font-size: 14px;
   color: #33303e;
-  font-family: MontserratAlternates_500Medium;
+  font-family: MontserratAlternates_600SemiBold;
   text-align: left;
   text-align-vertical: top;
 
