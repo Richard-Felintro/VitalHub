@@ -11,7 +11,7 @@ import {
   DateBox,
   DateText
 } from "./Style";
-export const ClinicCard = ({ name, location, starRating, openDays, selected = false, onPress }) => {
+export const ClinicCard = ({ name, location, starRating, openDays, selected, onPress }) => {
   return (
     <CardContainer selected={selected} onPress={onPress}>
       <CardColumn>

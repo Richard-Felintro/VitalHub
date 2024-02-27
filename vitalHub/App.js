@@ -1,20 +1,22 @@
 import { StatusBar } from "expo-status-bar";
 import SplashScreen from "./src/screens/SplashScreen/SplashScreen";
+import React, {useState} from 'react';
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { Navigation } from "./src/screens/Navigation/Navigation";
-import { LoginScreen } from "./src/screens/LoginScreen/LoginScreen";
-import { ForgotPasswordScreen } from "./src/screens/ForgotPasswordScreen/ForgotPasswordScreen";
-import { EmailVerificationScreen } from "./src/screens/EmailVerificationScreen/EmailVerificationScreen";
-import { NewPasswordScreen } from "./src/screens/NewPasswordScreen/NewPasswordScreen";
-import { CreateAccountScreen } from "./src/screens/CreateAccountScreen/CreateAccountScreen";
-import { ProfileScreen } from "./src/screens/ProfileScreen/ProfileScreen";
-import { DoctorHomeScreen } from "./src/screens/DoctorHomeScreen/DoctorHomeScreen";
-import { MedicalRecordScreen } from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
-import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeScreen";
-import { SelectClinicScreen } from "./src/screens/SelectClinicScreen/SelectClinicScreen";
-import { SelectDoctorScreen } from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
-import { SelectDateScreen } from "./src/screens/SelectDateScreen/SelectDateScreen";
+import { NavigationContainer }        from "@react-navigation/native";
+import { Navigation }                 from "./src/screens/Navigation/Navigation";
+import { LoginScreen }                from "./src/screens/LoginScreen/LoginScreen";
+import { ForgotPasswordScreen }       from "./src/screens/ForgotPasswordScreen/ForgotPasswordScreen";
+import { EmailVerificationScreen }    from "./src/screens/EmailVerificationScreen/EmailVerificationScreen";
+import { NewPasswordScreen }          from "./src/screens/NewPasswordScreen/NewPasswordScreen";
+import { CreateAccountScreen }        from "./src/screens/CreateAccountScreen/CreateAccountScreen";
+import { ProfileScreen }              from "./src/screens/ProfileScreen/ProfileScreen";
+import { DoctorHomeScreen }           from "./src/screens/DoctorHomeScreen/DoctorHomeScreen";
+import { MedicalRecordScreen }        from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
+import { PatientHomeScreen }          from "./src/screens/PatientHomeScreen/PatientHomeScreen";
+import { SelectClinicScreen }         from "./src/screens/SelectClinicScreen/SelectClinicScreen";
+import { SelectDoctorScreen }         from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
+import { SelectDateScreen }           from "./src/screens/SelectDateScreen/SelectDateScreen";
 
 import {
   useFonts,

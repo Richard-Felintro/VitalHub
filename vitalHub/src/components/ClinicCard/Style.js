@@ -12,7 +12,8 @@ export const CardContainer = styled.TouchableOpacity`
   shadow-opacity: 0.08;
   shadow-radius: 5px;
 
-  border: ${(props) => (props.selected == true ? "2px solid #496BBA" : "0")};
+  border: ${(props) =>
+    props.selected == true ? "2px solid #496BBA" : "0"};
 
   border-radius: 5px;
   padding: 18px;

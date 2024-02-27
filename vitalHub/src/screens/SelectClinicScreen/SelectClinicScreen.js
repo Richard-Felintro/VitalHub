@@ -50,7 +50,7 @@ export const SelectClinicScreen = () => {
             location={item.location}
             starRating={item.starRating}
             openDays={item.openDays}
-            selected={selectedClinic === item.id ? true : false}
+            selected={selectedClinic == item.id ? true : false}
             onPress={() => setSelectedClinic(item.id)}
           />
         )}

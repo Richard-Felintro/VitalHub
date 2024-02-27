@@ -55,10 +55,6 @@ export const Navigation = ({ navigation }) => {
         title="select date"
         onPress={() => navigation.navigate("SelectDateScreen")}
       />
-      <Button
-        title="select doctor"
-        onPress={() => navigation.navigate("SelectDoctorScreen")}
-      />
     </View>
   );
 };
