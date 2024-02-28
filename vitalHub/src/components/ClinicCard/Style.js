@@ -4,16 +4,21 @@ export const CardContainer = styled.TouchableOpacity`
   align-self: center;
   width: 90%;
   height: 84px;
+  background-color: #fff;
+  margin: 10px;
+  
+  elevation: 1;
   shadow-color: "#000";
   shadow-offset: {
-    width: 15;
-    height: 15;
+    width: 0;
+    height: 0;
   }
   shadow-opacity: 0.08;
   shadow-radius: 5px;
 
   border: ${(props) =>
     props.selected == true ? "2px solid #496BBA" : "0"};
+
 
   border-radius: 5px;
   padding: 18px;

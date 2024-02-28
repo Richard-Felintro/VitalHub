@@ -27,7 +27,7 @@ export const SelectDoctorScreen = () => {
       imgSource: "Rodrigo.png",
     },
   ];
-  const [selectedDoctor, setSelectedDoctor] = useState(0);
+  const [selectedDoctor, setSelectedDoctor] = useState(1);
   return (
     <Container>
       <ScreenTitle>Selecionar médico</ScreenTitle>
@@ -38,8 +38,7 @@ export const SelectDoctorScreen = () => {
           <DoctorCard
             name={item.name}
             specialty={item.specialty}
-            imgSource={"../../assets/Alessandra.png"}
-            selected={selectedDoctor == item.id ? true : false}
+            selected={selectedDoctor === item.id ? true : false}
             onPress={() => setSelectedDoctor(item.id)}
           />
         )}

@@ -22,7 +22,15 @@ export const ContainerCardsList = styled.View`
   flex-direction: row;
   gap: 10px;
 
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: #fefefe;
+  elevation: 2;
+  shadow-color: "#000";
+  shadow-offset: {
+    width: 0;
+    height: 0;
+  }
+  shadow-opacity: 0.08;
+  shadow-radius: 5px;
 `;
 
 export const ProfileImage = styled.Image`
@@ -79,7 +87,6 @@ export const ClockCard = styled.View`
 export const ButtonCard = styled.TouchableOpacity`
   background-color: transparent;
   border: none;
-  
 `;
 
 export const ButtonText = styled.Text`
@@ -89,5 +96,5 @@ export const ButtonText = styled.Text`
 `;
 
 export const ButtonTextRed = styled(ButtonText)`
-color: #C81D25;
-`
+  color: #c81d25;
+`;
