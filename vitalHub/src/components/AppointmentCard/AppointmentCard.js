@@ -16,17 +16,21 @@ import {
   ClockBox,
   ButtonTextRed,
 } from "./Style";
+import { ButtonSecondary } from "../Button/Style";
 
 export const AppointmentCard = ({
   situacao = "pendente",
   onPressCancel,
   onPressAppointment,
+  onPressDoctor,
 }) => {
   return (
     <ContainerCardsList>
-      <ProfileImage
-        source={require("../../assets/ProfileImgPlaceholder.png")}
-      />
+      <ButtonSecondary onPress={onPressDoctor}>
+        <ProfileImage
+          source={require("../../assets/ProfileImgPlaceholder.png")}
+        />
+      </ButtonSecondary>
       <ContentCard>
         <DataProfileCard>
           <ProfileName>Gustavo Magalhães</ProfileName>
@@ -37,7 +41,7 @@ export const AppointmentCard = ({
           </ProfileData>
 
           <ViewRow>
-            <ClockCard >
+            <ClockCard>
               <ClockBox situacao={situacao}>
                 <AntDesign
                   name="clockcircle"

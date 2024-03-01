@@ -53,12 +53,13 @@ export const CalendarComponent = () => {
         borderColor: "gray",
         height: 350,
         width: "100%",
-        fontFamily: "Quicksand_600SemiBold"
+        fontFamily: "Quicksand_600SemiBold",
+        margin: 15
       }}
       theme={{
         backgroundColor: "transparent",
         calendarBackground: "#transparent",
-        textSectionTitleColor: "#ACABB7",
+        textSectionTitleColor: "#5f5c6b",
         selectedDayBackgroundColor: "#60BFC5",
         selectedDayTextColor: "#FBFBFB",
         todayTextColor: "#60BFC5",
