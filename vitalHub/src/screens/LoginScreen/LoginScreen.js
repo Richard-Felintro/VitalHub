@@ -2,13 +2,20 @@ import { Container } from "../../components/Container/Style";
 import { Logo } from "../../components/Logo/Style";
 import { Title } from "../../components/Title/Style";
 import { Input } from "../../components/Input/Style";
-import { Button, ButtonGoogle } from "../../components/Button/Style";
+import {
+  Button,
+  ButtonGoogle,
+  ButtonSecondary,
+} from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Link } from "../../components/Link/Style";
 import { TextAccount } from "../../components/TextAccount/Style";
 import { AntDesign } from "@expo/vector-icons";
 
-export const LoginScreen = () => {
+export const LoginScreen = ({ navigation }) => {
+  async function Login() {
+    navigation.navigate("Main");
+  }
   return (
     <Container bgColor={"FAFAFA"}>
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
@@ -18,7 +25,7 @@ export const LoginScreen = () => {
       <Input placeholder="Senha" />
       <Link color={"#8c8a97"}>Esqueceu sua senha?</Link>
 
-      <Button>
+      <Button onPress={(e) => Login()}>
         <ButtonTitle color={"white"}>Entrar</ButtonTitle>
       </Button>
       <ButtonGoogle>
@@ -27,7 +34,10 @@ export const LoginScreen = () => {
       </ButtonGoogle>
 
       <TextAccount color={"#4D659D"}>
-        {"Não tem conta? "} <Link color={"#4D659D"}>Crie uma conta agora!</Link>
+        {"Não tem conta? "}{" "}
+        <ButtonSecondary onPress={() => {navigation.navigate("CreateAccountScreen")}}>
+          <Link color={"#4D659D"}>Crie uma conta agora!</Link>
+        </ButtonSecondary>
       </TextAccount>
     </Container>
   );

@@ -16,7 +16,7 @@ export const ContainerCardsList = styled.View`
   width: 90%;
   margin: 0 auto;
   margin-bottom: 12px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   background-color: #fff;
   flex-direction: row;
@@ -41,8 +41,9 @@ export const ProfileImage = styled.Image`
 
 export const ContentCard = styled.View`
   width: 70%;
-  gap: 11px;
+  gap: 6px;
   background-color: #fff;
+  justify-content: center;
 `;
 
 export const DataProfileCard = styled.View`
@@ -70,7 +71,7 @@ export const TextBold = styled.Text`
 `;
 
 export const ViewRow = styled.View`
-  width: 100%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

@@ -19,6 +19,7 @@
     "@fontsource/montserrat-alternates": "^5.0.8",
     "@fontsource/quicksand": "^5.0.16",
     "@react-native-picker/picker": "^2.6.1",
+    "@react-navigation/bottom-tabs": "^6.5.16",
     "@react-navigation/native-stack": "^6.9.17",
     "ant-design": "^1.0.0",
     "antd": "^5.14.1",

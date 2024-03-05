@@ -17,6 +17,8 @@ import { PatientHomeScreen } from "./src/screens/PatientHomeScreen/PatientHomeSc
 import { SelectClinicScreen } from "./src/screens/SelectClinicScreen/SelectClinicScreen";
 import { SelectDoctorScreen } from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
 import { SelectDateScreen } from "./src/screens/SelectDateScreen/SelectDateScreen";
+import { LocationScreen } from "./src/screens/LocationScreen/LocationScreen";
+import { Main } from "./src/screens/Main/Main";
 
 import {
   useFonts,
@@ -57,11 +59,13 @@ export default function App() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator>
-        <Stack.Screen
+        <Stack.Screen name="Login" component={LoginScreen} options={{title: "Login"}}/>
+        <Stack.Screen name="Main" component={Main} />
+        {/* <Stack.Screen
           name="Navigation"
           component={Navigation}
           options={{ title: "Navigation" }}
-        />
+        /> */}
 
         <Stack.Screen
           name="LoginScreen"
@@ -128,6 +132,11 @@ export default function App() {
           name="SelectDateScreen"
           component={SelectDateScreen}
           options={{ title: "SelectDate", headerShown: false }}
+        />
+        <Stack.Screen
+          name="LocationScreen"
+          component={LocationScreen}
+          options={{ title: "Location", headerShown: false }}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="transparent" translucent />

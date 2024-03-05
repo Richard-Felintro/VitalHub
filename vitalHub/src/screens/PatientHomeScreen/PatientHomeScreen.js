@@ -15,6 +15,7 @@ import { useState } from "react";
 import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCard";
 import { ListComponent } from "../../components/List/Style";
 import { PatientAppointmentModal } from "../../components/PatientAppointmentModal/PatientAppointmentModal";
+import { DoctorModal } from "../../components/DoctorModal/DoctorModal";
 
 const Consultas = [
   { id: 1, nome: "Richard", situacao: "pendente" },
@@ -26,11 +27,14 @@ export const PatientHomeScreen = () => {
   const [statusLista, setStatusLista] = useState("pendente");
 
   const [showModalCancel, setShowModalCancel] = useState(false);
-  const [showModalAppointment, setShowModalAppointment] = useState(true);
+  const [showModalAppointment, setShowModalAppointment] = useState(false);
+  const [showModalDoctor, setShowModalDoctor] = useState(true);
   return (
     <Container>
       <HeaderHome>
-        <UserDoctor source={require("../../assets/ProfileImgPlaceholder.png")} />
+        <UserDoctor
+          source={require("../../assets/ProfileImgPlaceholder.png")}
+        />
         <InfoContainer>
           <UserText>Bem-vindo</UserText>
           <MontSerratWhite>Richard Kosta</MontSerratWhite>
@@ -82,6 +86,10 @@ export const PatientHomeScreen = () => {
       <PatientAppointmentModal
         visible={showModalAppointment}
         setShowModalAppointment={setShowModalAppointment}
+      />
+      <DoctorModal
+        visible={showModalDoctor}
+        setShowModal={setShowModalDoctor}
       />
     </Container>
   );

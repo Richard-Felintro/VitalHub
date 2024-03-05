@@ -55,6 +55,10 @@ export const Navigation = ({ navigation }) => {
         title="select date"
         onPress={() => navigation.navigate("SelectDateScreen")}
       />
+      <Button
+        title="location"
+        onPress={() => navigation.navigate("LocationScreen")}
+      />
     </View>
   );
 };
