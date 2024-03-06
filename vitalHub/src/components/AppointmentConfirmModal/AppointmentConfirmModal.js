@@ -25,6 +25,7 @@ export const AppointmentConfirmModal = ({
   doctor = [],
   location,
   type,
+  nav,
   ...rest
 }) => {
   return (
@@ -56,7 +57,7 @@ export const AppointmentConfirmModal = ({
             <ModalTextSmall>{type}</ModalTextSmall>
           </ColumnContainer>
           <ColumnContainer>
-            <ConfirmButton>
+            <ConfirmButton onPress={nav}>
               <ButtonTitle color={"#FFF"}>CONFIRMAR</ButtonTitle>
             </ConfirmButton>
             <LinkButton onPress={() => setShowModal(false)}>

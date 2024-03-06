@@ -6,7 +6,10 @@ import { Button } from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Subtitle } from "../../components/Subtitle/Style";
 
-export const ForgotPasswordScreen = () => {
+export const ForgotPasswordScreen = ({ navigation }) => {
+  async function Continue(){
+    navigation.navigate("EmailVerification")
+  }
   return (
     <Container>
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
@@ -19,7 +22,7 @@ export const ForgotPasswordScreen = () => {
 
       <Input placeholder="Usuário ou E-mail" />
 
-      <Button>
+      <Button onPress={(e) => Continue()}>
         <ButtonTitle color={"white"}>Continuar</ButtonTitle>
       </Button>
     </Container>

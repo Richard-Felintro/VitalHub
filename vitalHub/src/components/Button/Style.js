@@ -28,5 +28,5 @@ export const ButtonGoogle = styled(Button)`
 
 export const ButtonSecondary = styled.TouchableOpacity`
   background-color: transparent;
-  margin: 20px;
+  margin: 5px;
 `;

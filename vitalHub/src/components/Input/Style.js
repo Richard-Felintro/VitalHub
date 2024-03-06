@@ -25,7 +25,7 @@ export const InputSquare = styled(Input)`
 `;
 
 export const InputLight = styled(Input)`
-  background-color: #ddd;
+  background-color: #f6f6f6;
   margin-top: 5px;
 
   color: ${(props) => `${props.color}`};

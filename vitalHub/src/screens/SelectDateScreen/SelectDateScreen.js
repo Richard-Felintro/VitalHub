@@ -9,14 +9,14 @@ import { DateContainer } from "./Style";
 import { AppointmentConfirmModal } from "../../components/AppointmentConfirmModal/AppointmentConfirmModal";
 import { useState } from "react";
 
-export const SelectDateScreen = () => {
+export const SelectDateScreen = ({navigation}) => {
   const Horarios = [
     { id: 0, value: "10:00", label: "10:00" },
     { id: 1, value: "11:00", label: "11:00" },
     { id: 2, value: "12:00", label: "12:00" },
     { id: 3, value: "13:00", label: "13:00" },
   ];
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   return (
     <DateContainer>
       <SelectDateTitle>Selecionar Clínica</SelectDateTitle>
@@ -38,6 +38,7 @@ export const SelectDateScreen = () => {
         location={"São Paulo, SP"}
         type={"Rotina"}
         setShowModal={() => setShowModal(false)}
+        nav={() => navigation.navigate("Home")}
       />
     </DateContainer>
   );

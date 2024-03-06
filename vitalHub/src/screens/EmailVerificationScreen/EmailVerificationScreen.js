@@ -8,7 +8,10 @@ import { Link, LinkSubtitle } from "../../components/Link/Style";
 import { TextAccount } from "../../components/TextAccount/Style";
 import { AntDesign } from "@expo/vector-icons";
 import { Subtitle, SubtitleHighlighted } from "../../components/Subtitle/Style";
-export const EmailVerificationScreen = () => {
+export const EmailVerificationScreen = ({ navigation }) => {
+  async function ResetPassword() {
+    navigation.navigate("ResetPassword");
+  }
   return (
     <Container>
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
@@ -16,7 +19,9 @@ export const EmailVerificationScreen = () => {
       <Title>Verifique seu e-mail</Title>
       <Subtitle color={"4E4B59"}>
         Digite o código de 4 dígitos enviado para{" "}
-        <SubtitleHighlighted color={"#496BBA"}>username@email.com</SubtitleHighlighted>
+        <SubtitleHighlighted color={"#496BBA"}>
+          username@email.com
+        </SubtitleHighlighted>
       </Subtitle>
 
       <ContainerRow>
@@ -26,7 +31,7 @@ export const EmailVerificationScreen = () => {
         <InputSquare placeholder="0" />
       </ContainerRow>
 
-      <Button>
+      <Button onPress={(e) => ResetPassword()}>
         <ButtonTitle color={"white"}>Entrar</ButtonTitle>
       </Button>
 

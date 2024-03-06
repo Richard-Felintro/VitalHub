@@ -22,6 +22,7 @@ import { BtnAppointmentType } from "../BtnAppointmentType/BtnAppointmentType";
 export const PatientAppointmentModal = ({
   visible,
   setShowModalAppointment,
+  nav,
   ...rest
 }) => {
   const [appointmentType, setAppointmentType] = useState("rotina");
@@ -62,7 +63,7 @@ export const PatientAppointmentModal = ({
             placeholder={"Informe a localização"}
             height={53}
           />
-          <Button>
+          <Button onPress={nav}>
             <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
           </Button>
           <ButtonSecondary onPress={() => setShowModalAppointment(false)}>

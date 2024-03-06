@@ -16,6 +16,14 @@ export const LoginScreen = ({ navigation }) => {
   async function Login() {
     navigation.navigate("Main");
   }
+
+  async function CreateAccount() {
+    navigation.navigate("CreateAccount");
+  }
+  async function ForgotPassword() {
+    navigation.navigate("ForgotPassword");
+  }
+
   return (
     <Container bgColor={"FAFAFA"}>
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
@@ -23,7 +31,9 @@ export const LoginScreen = ({ navigation }) => {
       <Title>Entrar ou criar conta</Title>
       <Input placeholder="Usuario ou email" />
       <Input placeholder="Senha" />
-      <Link color={"#8c8a97"}>Esqueceu sua senha?</Link>
+      <ButtonSecondary onPress={(e) => ForgotPassword()}>
+        <Link color={"#8c8a97"}>Esqueceu sua senha?</Link>
+      </ButtonSecondary>
 
       <Button onPress={(e) => Login()}>
         <ButtonTitle color={"white"}>Entrar</ButtonTitle>
@@ -35,7 +45,7 @@ export const LoginScreen = ({ navigation }) => {
 
       <TextAccount color={"#4D659D"}>
         {"Não tem conta? "}{" "}
-        <ButtonSecondary onPress={() => {navigation.navigate("CreateAccountScreen")}}>
+        <ButtonSecondary onPress={(e) => CreateAccount()}>
           <Link color={"#4D659D"}>Crie uma conta agora!</Link>
         </ButtonSecondary>
       </TextAccount>

@@ -6,7 +6,7 @@ import { ListComponent } from "../../components/List/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Link } from "../../components/Link/Style";
 import { DoctorCard } from "../../components/DoctorCard/DoctorCard";
-export const SelectDoctorScreen = () => {
+export const SelectDoctorScreen = ({ navigation }) => {
   const Doutores = [
     {
       id: 1,
@@ -44,7 +44,7 @@ export const SelectDoctorScreen = () => {
         )}
       />
 
-      <Button>
+      <Button onPress={() => navigation.navigate("SelectDate")}>
         <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
       </Button>
       <ButtonSecondary>

@@ -6,7 +6,10 @@ import { Button } from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Subtitle } from "../../components/Subtitle/Style";
 
-export const NewPasswordScreen = () => {
+export const NewPasswordScreen = ({navigation}) => {
+  async function ReturnToLogin(){
+    navigation.navigate("Login")
+  }
   return (
     <Container>
       <Logo source={require("../../assets/VitalHub_Logo 1.png")} />
@@ -19,7 +22,7 @@ export const NewPasswordScreen = () => {
       <Input placeholder="Nova senha" />
       <Input placeholder="Confirmar nova senha" />
 
-      <Button>
+      <Button onPress={(e) => ReturnToLogin()}>
         <ButtonTitle color={"white"}>Confirmar nova senha</ButtonTitle>
       </Button>
     </Container>

@@ -26,24 +26,24 @@ export const ProfileScreen = () => {
 
         <FieldContent>
           <InputLabel>Data de nascimento</InputLabel>
-          <InputLight placeholder={"DD/MM/YYYY"} maxLength={10}>04/05/1999</InputLight>
+          <InputLight color={"white"} placeholder={"DD/MM/YYYY"} maxLength={10}>04/05/1999</InputLight>
         </FieldContent>
         <FieldContent>
           <InputLabel>CPF</InputLabel>
-          <InputLight placeholder={"*********-**"} maxLength={13}>859********</InputLight>
+          <InputLight color={"white"} placeholder={"*********-**"} maxLength={13}>859********</InputLight>
         </FieldContent>
         <FieldContent>
           <InputLabel>Endereço</InputLabel>
-          <InputLight>Rua Vicenso Silva, 987</InputLight>
+          <InputLight color={"white"}>Rua Vicenso Silva, 987</InputLight>
         </FieldContent>
         <ContainerRow>
           <FieldContentSmall>
             <InputLabel>CEP</InputLabel>
-            <InputLight placeholder={"*****-***"} maxLength={11}>06548-909</InputLight>
+            <InputLight color={"white"} placeholder={"*****-***"} maxLength={11}>06548-909</InputLight>
           </FieldContentSmall>
           <FieldContentSmall>
             <InputLabel>Cidade</InputLabel>
-            <InputLight placeholder={"*****-***"}>Moema-SP</InputLight>
+            <InputLight color={"white"} placeholder={"*****-***"}>Moema-SP</InputLight>
           </FieldContentSmall>
         </ContainerRow>
       </Container>

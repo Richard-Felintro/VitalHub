@@ -16,7 +16,7 @@ export const UserDoctor = styled.Image`
 export const NotificationBell = styled.Image`
   width: 18px;
   height: 18px;
-  margin-left: 160px;
+  margin-left: 150px;
   margin-top: 60px;
 `;
 

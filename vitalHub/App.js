@@ -59,13 +59,16 @@ export default function App() {
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{title: "Login"}}/>
-        <Stack.Screen name="Main" component={Main} />
-        {/* <Stack.Screen
-          name="Navigation"
-          component={Navigation}
-          options={{ title: "Navigation" }}
-        /> */}
+        <Stack.Screen name="Login" component={LoginScreen} options={{title: "Login", headerShown: false}}/>
+        <Stack.Screen name="Main" component={Main} options={{headerShown: false}}/> 
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="CreateAccount" component={CreateAccountScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="EmailVerification" component={EmailVerificationScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="ResetPassword" component={NewPasswordScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="SelectClinic" component={SelectClinicScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="SelectDoctor" component={SelectDoctorScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="SelectDate" component={SelectDateScreen} options={{headerShown: false}}/>
 
         <Stack.Screen
           name="LoginScreen"
@@ -78,31 +81,27 @@ export default function App() {
           component={SplashScreen}
           options={{ title: "SplashScreen", headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="ForgotPassword"
           component={ForgotPasswordScreen}
           options={{ title: "ForgotPassword", headerShown: false }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="EmailVerificationScreen"
           component={EmailVerificationScreen}
           options={{ title: "EmailVerification", headerShown: false }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="NewPasswordScreen"
           component={NewPasswordScreen}
           options={{ title: "NewPassword", headerShown: false }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="CreateAccountScreen"
           component={CreateAccountScreen}
           options={{ title: "CreateAccount", headerShown: false }}
-        />
-        <Stack.Screen
-          name="ProfileScreen"
-          component={ProfileScreen}
-          options={{ title: "Profile", headerShown: false }}
-        />
+        /> */}
+
         <Stack.Screen
           name="DoctorHomeScreen"
           component={DoctorHomeScreen}
@@ -118,28 +117,23 @@ export default function App() {
           component={MedicalRecordScreen}
           options={{ title: "MedicalRecord", headerShown: false }}
         />
-        <Stack.Screen
-          name="SelectClinicScreen"
-          component={SelectClinicScreen}
-          options={{ title: "SelectClinic", headerShown: false }}
-        />
-        <Stack.Screen
+
+        {/* <Stack.Screen
           name="SelectDoctorScreen"
           component={SelectDoctorScreen}
           options={{ title: "SelectDoctor", headerShown: false }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="SelectDateScreen"
           component={SelectDateScreen}
           options={{ title: "SelectDate", headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name="LocationScreen"
           component={LocationScreen}
           options={{ title: "Location", headerShown: false }}
         />
       </Stack.Navigator>
-      <StatusBar backgroundColor="transparent" translucent />
     </NavigationContainer>
   );
 }
