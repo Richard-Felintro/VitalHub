@@ -47,7 +47,7 @@ export const SelectDoctorScreen = ({ navigation }) => {
       <Button onPress={() => navigation.navigate("SelectDate")}>
         <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
       </Button>
-      <ButtonSecondary>
+      <ButtonSecondary onPress={() => navigation.navigate("SelectClinic")}>
         <Link color={"#344F8F"}>Cancelar</Link>
       </ButtonSecondary>
     </Container>

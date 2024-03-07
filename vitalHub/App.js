@@ -69,6 +69,8 @@ export default function App() {
         <Stack.Screen name="SelectClinic" component={SelectClinicScreen} options={{headerShown: false}}/>
         <Stack.Screen name="SelectDoctor" component={SelectDoctorScreen} options={{headerShown: false}}/>
         <Stack.Screen name="SelectDate" component={SelectDateScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="LocationScreen" component={LocationScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="MedicalRecord" component={MedicalRecordScreen} options={{headerShown: false}}/>
 
         <Stack.Screen
           name="LoginScreen"
@@ -112,11 +114,11 @@ export default function App() {
           component={PatientHomeScreen}
           options={{ title: "PatientHome", headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="MedicalRecordScreen"
           component={MedicalRecordScreen}
           options={{ title: "MedicalRecord", headerShown: false }}
-        />
+        /> */}
 
         {/* <Stack.Screen
           name="SelectDoctorScreen"
@@ -128,11 +130,11 @@ export default function App() {
           component={SelectDateScreen}
           options={{ title: "SelectDate", headerShown: false }}
         /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="LocationScreen"
           component={LocationScreen}
           options={{ title: "Location", headerShown: false }}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

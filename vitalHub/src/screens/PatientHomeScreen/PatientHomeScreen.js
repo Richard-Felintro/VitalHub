@@ -11,13 +11,14 @@ import { CalendarHome } from "../../components/CalendarList/CalendarHome";
 
 import { ContainerButton, StethoscopeIcon } from "./Style";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppointmentCard } from "../../components/AppointmentCard/AppointmentCard";
 import { ListComponent } from "../../components/List/Style";
 import { PatientAppointmentModal } from "../../components/PatientAppointmentModal/PatientAppointmentModal";
 import { DoctorModal } from "../../components/DoctorModal/DoctorModal";
 import { ButtonSecondary } from "../../components/Button/Style";
 import { FontAwesome } from "@expo/vector-icons";
+import { CancellationModal } from "../../components/CancellationModal/CancellationModal";
 
 const Consultas = [
   { id: 1, nome: "Richard", situacao: "pendente" },
@@ -25,13 +26,13 @@ const Consultas = [
   { id: 3, nome: "Richard", situacao: "cancelado" },
 ];
 
-export const PatientHomeScreen = ({ navigation }) => {
+export const PatientHomeScreen = ({ route, navigation }) => {
+
   async function GoToProfile() {
     navigation.navigate("Profile");
   }
 
   const [statusLista, setStatusLista] = useState("pendente");
-
   const [showModalCancel, setShowModalCancel] = useState(false);
   const [showModalAppointment, setShowModalAppointment] = useState(false);
   const [showModalDoctor, setShowModalDoctor] = useState(false);
@@ -78,9 +79,10 @@ export const PatientHomeScreen = ({ navigation }) => {
           renderItem={({ item }) =>
             statusLista == item.situacao && (
               <AppointmentCard
+                navigation={navigation}
                 situacao={item.situacao}
-                onPressCancel={() => setShowModalCancel(true)}
-                onPressAppointment={() => setShowModalAppointment(true)}
+                onPressCancel={setShowModalCancel}
+                onPressAppointment={setShowModalDoctor}
                 showsVerticalScrollIndicator={false}
               />
             )
@@ -89,7 +91,7 @@ export const PatientHomeScreen = ({ navigation }) => {
       </DoctorContainer>
 
       <StethoscopeIcon>
-        <ButtonSecondary onPress={(e) => setShowModalAppointment(true)}>
+        <ButtonSecondary onPress={() => setShowModalAppointment(true)}>
           <FontAwesome name="stethoscope" size={36} color="white" />
         </ButtonSecondary>
       </StethoscopeIcon>
@@ -101,10 +103,16 @@ export const PatientHomeScreen = ({ navigation }) => {
         setShowModalAppointment={setShowModalAppointment}
         nav={() => navigation.navigate("SelectClinic")}
       />
+
       <DoctorModal
         visible={showModalDoctor}
         setShowModal={setShowModalDoctor}
-        nav={() => navigation.navigate("SelectClinic")}
+        nav={() => navigation.navigate("LocationScreen")}
+      />
+
+      <CancellationModal
+        visible={showModalCancel}
+        setShowModal={setShowModalCancel}
       />
     </Container>
   );

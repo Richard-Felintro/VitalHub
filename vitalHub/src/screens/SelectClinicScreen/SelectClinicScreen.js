@@ -6,7 +6,11 @@ import { ListComponent } from "../../components/List/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Link } from "../../components/Link/Style";
 import { ClinicCard } from "../../components/ClinicCard/ClinicCard";
-export const SelectClinicScreen = ({ navigation }) => {
+export const SelectClinicScreen = ({ navigation, setModal }) => {
+  async function HandleReturn() {
+    await setModal(true);
+    navigation.navigate("Home");
+  }
   const Consultas = [
     {
       id: 1,
@@ -58,7 +62,7 @@ export const SelectClinicScreen = ({ navigation }) => {
       <Button onPress={() => navigation.navigate("SelectDoctor")}>
         <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
       </Button>
-      <ButtonSecondary>
+      <ButtonSecondary onPress={() => HandleReturn()}>
         <Link color={"#344F8F"}>Cancelar</Link>
       </ButtonSecondary>
     </Container>

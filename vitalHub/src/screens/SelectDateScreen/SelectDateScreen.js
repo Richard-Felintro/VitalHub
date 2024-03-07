@@ -28,7 +28,7 @@ export const SelectDateScreen = ({navigation}) => {
       <Button onPress={() => setShowModal(true)}>
         <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
       </Button>
-      <ButtonSecondary>
+      <ButtonSecondary onPress={() => navigation.navigate("Home")}>
         <Link color={"#344F8F"}>Cancelar</Link>
       </ButtonSecondary>
       <AppointmentConfirmModal
@@ -38,7 +38,7 @@ export const SelectDateScreen = ({navigation}) => {
         location={"São Paulo, SP"}
         type={"Rotina"}
         setShowModal={() => setShowModal(false)}
-        nav={() => navigation.navigate("Home")}
+        nav={() => navigation.navigate("SelectDoctor")}
       />
     </DateContainer>
   );

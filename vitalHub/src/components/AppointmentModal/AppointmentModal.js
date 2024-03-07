@@ -11,9 +11,7 @@ export const AppointmentModal = ({ visible, setShowModalAppointment, ...rest }) 
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <PatientModal>
         <ModalContent>
-          <PatientImage
-            source={require("../../assets/ProfileImgPlaceholder.png")}
-          />
+          <PatientImage source={require("../../assets/ProfileImgPlaceholder.png")}/>
           <Title>Richard Kosta</Title>
           <RowContainer>
             <UserText>22 Anos</UserText>

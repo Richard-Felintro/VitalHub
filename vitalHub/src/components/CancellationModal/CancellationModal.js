@@ -4,12 +4,14 @@ import { Button, ButtonSecondary } from "../Button/Style";
 import {
   PatientModal,
   ModalContent,
-  ModalText
+  ModalText,
+  nav,
+  cancel
 } from "./Style";
 import { ButtonTitle } from "../ButtonTitle/Style";
 import { Link } from "../Link/Style";
 
-export const CancellationModal = ({ visible, setShowModalCancel, ...rest }) => {
+export const CancellationModal = ({ visible, setShowModal, ...rest }) => {
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <PatientModal>
@@ -19,10 +21,10 @@ export const CancellationModal = ({ visible, setShowModalCancel, ...rest }) => {
             Ao cancelar essa consulta, abrirá uma possível disponibilidade no
             seu horário, deseja mesmo cancelar essa consulta?
           </ModalText>
-          <Button>
+          <Button onPress={() => setShowModal(false)}>
             <ButtonTitle color={"#FFF"}>CONFIRMAR</ButtonTitle>
           </Button>
-          <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+          <ButtonSecondary onPress={() => setShowModal(false)}>
             <Link color={"#344F8F"}>Cancelar</Link>
           </ButtonSecondary>
         </ModalContent>

@@ -26,6 +26,10 @@ export const PatientAppointmentModal = ({
   ...rest
 }) => {
   const [appointmentType, setAppointmentType] = useState("rotina");
+  async function set() {
+    setShowModalAppointment(false)
+    nav()
+  }
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
       <PatientModal>
@@ -63,7 +67,7 @@ export const PatientAppointmentModal = ({
             placeholder={"Informe a localização"}
             height={53}
           />
-          <Button onPress={nav}>
+          <Button onPress={() => set()}>
             <ButtonTitle color={"#FFF"}>CONTINUAR</ButtonTitle>
           </Button>
           <ButtonSecondary onPress={() => setShowModalAppointment(false)}>

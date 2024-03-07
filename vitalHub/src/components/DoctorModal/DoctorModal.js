@@ -27,6 +27,7 @@ export const DoctorModal = ({
   doctor = [],
   location,
   type,
+  nav,
   ...rest
 }) => {
   return (
@@ -39,7 +40,7 @@ export const DoctorModal = ({
             <ModalTextSmall>Clínico Geral</ModalTextSmall>
             <ModalTextSmall>CRM-15286</ModalTextSmall>
           </RowContainer>
-          <ConfirmButton>
+          <ConfirmButton onPress={nav}>
             <ButtonTitle color={"#FFF"}>VER LOCAL DA CONSULTA</ButtonTitle>
           </ConfirmButton>
           <LinkButton onPress={() => setShowModal(false)}>

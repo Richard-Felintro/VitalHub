@@ -19,10 +19,12 @@ import {
 import { ButtonSecondary } from "../Button/Style";
 
 export const AppointmentCard = ({
+  profile = ":3",
   situacao = "pendente",
   onPressCancel,
   onPressAppointment,
   onPressDoctor,
+  navigation,
 }) => {
   return (
     <ContainerCardsList>
@@ -53,11 +55,17 @@ export const AppointmentCard = ({
               {situacao == "cancelado" ? (
                 <></>
               ) : situacao == "pendente" ? (
-                <ButtonCard onPress={onPressCancel}>
+                <ButtonCard onPress={() => onPressCancel(true)}>
                   <ButtonTextRed>Cancelar</ButtonTextRed>
                 </ButtonCard>
               ) : (
-                <ButtonCard onPress={onPressAppointment}>
+                <ButtonCard
+                  onPress={
+                    profile !== "Paciente"
+                      ? () => onPressAppointment(true)
+                      : () => navigation.navigate("MedicalRecord")
+                  }
+                >
                   <ButtonText>Ver prontuário</ButtonText>
                 </ButtonCard>
               )}

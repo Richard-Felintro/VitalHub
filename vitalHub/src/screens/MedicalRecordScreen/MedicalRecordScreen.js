@@ -10,7 +10,7 @@ import { Title } from "../../components/Title/Style";
 import { SubtitleDual } from "../../components/Subtitle/Style";
 import { ScrollView } from "react-native";
 
-export const MedicalRecordScreen = () => {
+export const MedicalRecordScreen = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Container>
@@ -52,7 +52,7 @@ export const MedicalRecordScreen = () => {
           <Button>
             <ButtonTitle color={"#fff"}>EDITAR</ButtonTitle>
           </Button>
-          <ButtonSecondary>
+          <ButtonSecondary onPress={() => navigation.navigate("Home")}>
             <Link color={"#344F8F"}>Cancelar</Link>
           </ButtonSecondary>
         </RecordContainer>
