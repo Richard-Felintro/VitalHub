@@ -1,6 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import SplashScreen from "./src/screens/SplashScreen/SplashScreen";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {
+  requestForegroundPermissionAsync,
+  getCurrentPositionAsync,
+} from "expo-location";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -19,7 +23,8 @@ import { SelectDoctorScreen } from "./src/screens/SelectDoctorScreen/SelectDocto
 import { SelectDateScreen } from "./src/screens/SelectDateScreen/SelectDateScreen";
 import { LocationScreen } from "./src/screens/LocationScreen/LocationScreen";
 import { Main } from "./src/screens/Main/Main";
-
+import MapViewDirections from "react-native-maps-directions";
+import { StyleSheet } from "react-native";
 import {
   useFonts,
   MontserratAlternates_500Medium,
@@ -31,10 +36,13 @@ import {
   Quicksand_500Medium,
   Quicksand_600SemiBold,
 } from "@expo-google-fonts/quicksand";
+import MapView, { Marker } from "react-native-maps";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+
   const [fontsLoaded, fontError] = useFonts({
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
@@ -55,22 +63,69 @@ export default function App() {
     //name - nome da tela
     //component - componente que sera chamado
     //option(title) - titulo da tela
-
     <NavigationContainer>
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{title: "Login", headerShown: false}}/>
-        <Stack.Screen name="Main" component={Main} options={{headerShown: false}}/> 
-        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="CreateAccount" component={CreateAccountScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="EmailVerification" component={EmailVerificationScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="ResetPassword" component={NewPasswordScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="SelectClinic" component={SelectClinicScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="SelectDoctor" component={SelectDoctorScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="SelectDate" component={SelectDateScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="LocationScreen" component={LocationScreen} options={{headerShown: false}}/>
-        <Stack.Screen name="MedicalRecord" component={MedicalRecordScreen} options={{headerShown: false}}/>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ title: "Login", headerShown: false }}
+        />
+        <Stack.Screen
+          name="Main"
+          component={Main}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPasswordScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CreateAccount"
+          component={CreateAccountScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EmailVerification"
+          component={EmailVerificationScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ResetPassword"
+          component={NewPasswordScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectClinic"
+          component={SelectClinicScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectDoctor"
+          component={SelectDoctorScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SelectDate"
+          component={SelectDateScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LocationScreen"
+          component={LocationScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MedicalRecord"
+          component={MedicalRecordScreen}
+          options={{ headerShown: false }}
+        />
 
         <Stack.Screen
           name="LoginScreen"
@@ -139,3 +194,15 @@ export default function App() {
     </NavigationContainer>
   );
 }
+const style = StyleSheet.create({
+  map: {
+    flex: 1,
+    width: "100%",
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

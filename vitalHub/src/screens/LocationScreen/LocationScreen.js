@@ -3,12 +3,19 @@ import { Title } from "../../components/Title/Style";
 import { Subtitle } from "../../components/Subtitle/Style";
 import { FormContainer, GPSimg, Row } from "./Style";
 import { InputLabel } from "../../components/Label/Style";
-import { Container, FieldContent, FieldContentSmall } from "../../components/Container/Style";
+import {
+  Container,
+  FieldContent,
+  FieldContentSmall,
+} from "../../components/Container/Style";
 import { InputLight } from "../../components/Input/Style";
 import { InputLightSmall, FieldContentShort } from "./Style";
+import GpsView from "../../components/GpsView/GpsView";
+import { ButtonSecondary } from "../../components/Button/Style";
 export const LocationScreen = () => {
   return (
     <Container>
+      <GpsView />
       <FormContainer>
         <ColumnContainer>
           <Title>Clínica Natureh</Title>
@@ -28,6 +35,9 @@ export const LocationScreen = () => {
             <InputLightSmall placeholder={"Moema-SP"}></InputLightSmall>
           </FieldContentShort>
         </Row>
+        <ButtonSecondary onPress={() => navigation.navigate("Home")}>
+          <Link color={"#344F8F"}>Cancelar</Link>
+        </ButtonSecondary>
       </FormContainer>
     </Container>
   );

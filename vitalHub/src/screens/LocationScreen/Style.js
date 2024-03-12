@@ -16,14 +16,18 @@ export const InputLightSmall = styled(InputLight)`
 `;
 
 export const FieldContentShort = styled(FieldContent)`
-  width: 75%;
+  width: 100%;
 `;
 
 export const FormContainer = styled.View`
-  height: 60%;
+  height: 350px;
   width: 100%;
+
   border-radius: 5px;
+  align-self: flex-start;
   
+  padding: 25px;
+  gap: 25px;
   align-items: center;
   z-index: 99;
 `;
