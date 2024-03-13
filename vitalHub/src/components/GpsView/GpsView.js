@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from "react-native";
 
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
@@ -21,6 +21,9 @@ export default function App() {
     latitude: -23.2447,
     longitude: -46.264,
   });
+
+  let colorScheme = useColorScheme();
+
 
   async function CapturarLocalizacao() {
     const { granted } = await requestForegroundPermissionsAsync();
@@ -95,7 +98,7 @@ export default function App() {
           }}
           provider={PROVIDER_GOOGLE}
           style={styles.map}
-          customMapStyle={grayMapStyle}
+          customMapStyle={colorScheme !== "light" ? lightMapStyle : darkMapStyle}
         >
           {/* Criando um marcador no mapa */}
           <Marker
@@ -118,7 +121,7 @@ export default function App() {
             }}
             apikey={mapskey}
             strokeWidth={5}
-            strokeColor="#496BBA"
+            strokeColor={colorScheme !== "light" ? "#496BBA" : "cyan"}
           />
 
           {/* Criando um marcador no mapa */}
@@ -151,7 +154,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const grayMapStyle = [
+const lightMapStyle = [
   {
     elementType: "geometry",
     stylers: [
@@ -360,6 +363,229 @@ const grayMapStyle = [
     stylers: [
       {
         color: "#8EA5D9",
+      },
+    ],
+  },
+  {
+    featureType: "water",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+];
+
+const darkMapStyle = [
+  {
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#5a5a5a",
+      },
+    ],
+  },
+  {
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        saturation: -5,
+      },
+      {
+        lightness: -5,
+      },
+    ],
+  },
+  {
+    elementType: "labels.icon",
+    stylers: [
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#FBFBFB",
+      },
+    ],
+  },
+  {
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        color: "#33303E",
+      },
+    ],
+  },
+  {
+    featureType: "administrative",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "administrative.country",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "administrative.land_parcel",
+    stylers: [
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
+    featureType: "administrative.locality",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "poi",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "poi.business",
+    stylers: [
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#009900",
+      },
+    ],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "labels.text",
+    stylers: [
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        color: "#1B1B1B",
+      },
+    ],
+  },
+  {
+    featureType: "road",
+    stylers: [
+      {
+        visibility: "on",
+      },
+    ],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry.fill",
+    stylers: [
+      {
+        color: "#ededed",
+      },
+    ],
+  },
+  {
+    featureType: "road",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#FBFBFB",
+      },
+    ],
+  },
+  {
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#bcbcbc",
+      },
+    ],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#9a9a9a",
+      },
+    ],
+  },
+  {
+    featureType: "road.highway.controlled_access",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#8C8A97",
+      },
+    ],
+  },
+  {
+    featureType: "road.local",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "transit",
+    elementType: "labels.text.fill",
+    stylers: [
+      {
+        color: "#fbfbfb",
+      },
+    ],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [
+      {
+        color: "#5E85D9",
       },
     ],
   },

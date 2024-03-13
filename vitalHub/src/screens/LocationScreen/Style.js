@@ -5,14 +5,20 @@ import { FieldContent } from "../../components/Container/Style";
 
 export const GPSimg = styled.Image`
   width: 100%;
+  height: 100%;
 `;
 
 export const Row = styled(RowContainer)`
   width: 50%;
+  margin-left: 30px;
+`;
+
+export const InputLightWide = styled(InputLight)`
+  width: 100%;
 `;
 
 export const InputLightSmall = styled(InputLight)`
-  width: 75%;
+  width: 80%;
 `;
 
 export const FieldContentShort = styled(FieldContent)`
@@ -23,11 +29,12 @@ export const FormContainer = styled.View`
   height: 350px;
   width: 100%;
 
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 10px;
   align-self: flex-start;
   
   padding: 25px;
-  gap: 25px;
+  gap: 10px;
   align-items: center;
   z-index: 99;
 `;

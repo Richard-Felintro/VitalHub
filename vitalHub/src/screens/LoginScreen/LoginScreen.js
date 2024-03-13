@@ -11,6 +11,7 @@ import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { Link } from "../../components/Link/Style";
 import { TextAccount } from "../../components/TextAccount/Style";
 import { AntDesign } from "@expo/vector-icons";
+import { Switch } from "@ant-design/react-native";
 
 export const LoginScreen = ({ navigation }) => {
   async function Login() {
@@ -23,6 +24,23 @@ export const LoginScreen = ({ navigation }) => {
   async function ForgotPassword() {
     navigation.navigate("ForgotPassword");
   }
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState(darkTheme);
+
+  useEffect(() =>{
+    const colorScheme = Appearance.getColorScheme();
+    if (colorScheme === 'dark') {
+      setCurrentTheme(darkTheme)
+    } else{
+      setCurrentTheme(lightTheme)
+    }
+  },[])
+
+  const toggleSwitch = () => {
+    setIsSwitchOn(!isSwitchOn);
+    const newTheme = isSwitchOn ? darkTheme : lightTheme;
+    setCurrentTheme(newTheme);
+  };
 
   return (
     <Container bgColor={"FAFAFA"}>
@@ -49,6 +67,9 @@ export const LoginScreen = ({ navigation }) => {
           <Link color={"#4D659D"}>Crie uma conta agora!</Link>
         </ButtonSecondary>
       </TextAccount>
+      <Switch
+        value={darkMode}
+        onValueChange={toggleSwitch}/>
     </Container>
   );
 };

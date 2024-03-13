@@ -1,7 +1,7 @@
-import { ColumnContainer } from "../../components/DoctorModal/Style";
+import { ColumnContainer, LinkButton } from "../../components/DoctorModal/Style";
 import { Title } from "../../components/Title/Style";
 import { Subtitle } from "../../components/Subtitle/Style";
-import { FormContainer, GPSimg, Row } from "./Style";
+import { FormContainer, GPSimg, InputLightWide, Row } from "./Style";
 import { InputLabel } from "../../components/Label/Style";
 import {
   Container,
@@ -12,7 +12,8 @@ import { InputLight } from "../../components/Input/Style";
 import { InputLightSmall, FieldContentShort } from "./Style";
 import GpsView from "../../components/GpsView/GpsView";
 import { ButtonSecondary } from "../../components/Button/Style";
-export const LocationScreen = () => {
+import { Link } from "../../components/Link/Style";
+export const LocationScreen = ({navigation}) => {
   return (
     <Container>
       <GpsView />
@@ -23,7 +24,7 @@ export const LocationScreen = () => {
         </ColumnContainer>
         <FieldContent>
           <InputLabel>Endereço</InputLabel>
-          <InputLight placeholder={"Rua Vicenso Silva, 987"}></InputLight>
+          <InputLightWide placeholder={"Rua Vicenso Silva, 987"}></InputLightWide>
         </FieldContent>
         <Row>
           <FieldContentShort>
