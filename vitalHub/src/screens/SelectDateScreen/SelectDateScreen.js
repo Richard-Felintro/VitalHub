@@ -19,7 +19,7 @@ export const SelectDateScreen = ({navigation}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <DateContainer>
-      <SelectDateTitle>Selecionar Clínica</SelectDateTitle>
+      <SelectDateTitle>Selecionar Data</SelectDateTitle>
       <CalendarComponent />
       <Dropdown
         content={Horarios}

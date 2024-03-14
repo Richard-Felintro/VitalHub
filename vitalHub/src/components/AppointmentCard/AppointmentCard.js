@@ -19,7 +19,7 @@ import {
 import { ButtonSecondary } from "../Button/Style";
 
 export const AppointmentCard = ({
-  profile = ":3",
+  profile = "Paciente", // :3
   situacao = "pendente",
   onPressCancel,
   onPressAppointment,

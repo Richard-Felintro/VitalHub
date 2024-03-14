@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { ActivityIndicator, StyleSheet, Text, View, useColorScheme } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, useColorScheme } from "react-native";
 
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
