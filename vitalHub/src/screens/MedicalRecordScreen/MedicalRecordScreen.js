@@ -4,20 +4,21 @@ import { InputBox } from "../../components/Input/InputBox";
 import { Button, ButtonSecondary } from "../../components/Button/Style";
 import { Link } from "../../components/Link/Style";
 import { ProfileImg } from "../../components/ProfileImage/ProfileImage";
-import { RecordContainer } from "./Style";
+import { CameraButton, RecordContainer } from "./Style";
 import { ContainerRow } from "../../components/Container/Style";
 import { Title } from "../../components/Title/Style";
 import { SubtitleDual } from "../../components/Subtitle/Style";
 import { ScrollView } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
-export const MedicalRecordScreen = ({navigation}) => {
+export const MedicalRecordScreen = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Container>
         <RecordContainer>
           <ProfileImg
             source={require("../../assets/ProfileImgPlaceholder.png")}
-          />    
+          />
           <FieldContent>
             <Title>Richard Kosta</Title>
             <ContainerRow>
@@ -45,6 +46,16 @@ export const MedicalRecordScreen = ({navigation}) => {
             labelText={"Prescrição médica"}
             placeholder={"Prescrição médica"}
           />
+          <InputBox
+            height={121}
+            lineCount={4}
+            labelText={"Prescrição médica"}
+            placeholder={"Prescrição médica"}
+          />
+          <CameraButton>
+            <Feather name="camera" size={24} color="black" />
+            <ButtonTitle color={"#fff"}>Enviar</ButtonTitle>
+          </CameraButton>
 
           <Button>
             <ButtonTitle color={"#fff"}>SALVAR</ButtonTitle>
