@@ -36,13 +36,30 @@ import {
   Quicksand_500Medium,
   Quicksand_600SemiBold,
 } from "@expo-google-fonts/quicksand";
+// Importar os recursos do expo-notification
+import * as Notifications from "expo-notifications";
+
+// Solicita permissões de notificação ao iniciar o app
+Notifications.requestPermissionsAsync();
+
+// Define como as notificações devem ser tratadas quando recebidas
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    // Mostrar o alerta quando a notificação for recebida
+    shouldShowAlert: true,
+
+    // Reproduz som ao receber a notificação
+    shouldPlaySound: true,
+
+    // Número de notificações no ícone do app
+    shouldSetBadge: false,
+  }),
+});
 import MapView, { Marker } from "react-native-maps";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
-
   const [fontsLoaded, fontError] = useFonts({
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
